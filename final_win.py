@@ -5,17 +5,15 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt
 
-from instr import (
-    txt_title3, WIN_WIDTH, 
-    WIN_HEIGHT, WIN_X, 
-    WIN_Y, txt_index,
-    txt_workheart
-)
+from instr import *
+from second_win import *
+
 
 
 class FinalWin(QWidget):
-    def __init__(self):
+    def __init__(self, exp):
         super().__init__()
+        self.exp = exp
         self.set_appear()          # устанавливает, как будет выглядеть окно
         self.initUI()              # создаём и настраиваем граф элементы     
         self.show()                # старт 
@@ -33,4 +31,10 @@ class FinalWin(QWidget):
         self.v_line.addWidget(self.workheart, alignment=Qt.AlignCenter)
 
         self.setLayout(self.v_line)
+    
+    def results(self):
+        self.index = (
+            4 * (int(self.exp.result_test1)
+            + int(self.exp.result_test2) 
+            + int(self.exp.result_test3)) - 200) / 10
 
