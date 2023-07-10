@@ -17,8 +17,7 @@ class FinalWin(QWidget):
     def __init__(self):
         super().__init__()
         self.set_appear()          # устанавливает, как будет выглядеть окно
-        self.initUI()              # создаём и настраиваем граф элементы
-        self.connects()            # устанавливает связи между элементами
+        self.initUI()              # создаём и настраиваем граф элементы     
         self.show()                # старт 
     
     def set_appear(self):
@@ -30,9 +29,8 @@ class FinalWin(QWidget):
         self.index = QLabel(txt_index)
         self.workheart = QLabel(txt_workheart)
         self.v_line = QVBoxLayout()
-        self.v_line.addWidget(self.index)
-        self.v_line.addWidget(self.workheart)
+        self.v_line.addWidget(self.index, alignment=Qt.AlignCenter)
+        self.v_line.addWidget(self.workheart, alignment=Qt.AlignCenter)
 
-        self.setLayout(v_line)
+        self.setLayout(self.v_line)
 
-    
