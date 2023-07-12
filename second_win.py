@@ -132,8 +132,8 @@ class TestWin(QWidget):
     def next_click(self):
         self.hide()
         self.exp = Experiment(
-            self.hintage.text(), self.hinttest1.text(), 
-            self.hinttest2.text(), self.hinttest3.text()
+            int(self.hintage.text()), int(self.hinttest1.text()), 
+            int(self.hinttest2.text()), int(self.hinttest3.text())
         )
         self.window_final = FinalWin(self.exp)
 
